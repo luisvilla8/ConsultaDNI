@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultor DNI</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="container">
+    <nav class="navbar">
+      <picture class="navbar__logo">
+        <img src="img/logo.svg" alt="logo" />
+      </picture>
+      <p class="navbar__name">LUIS VILLACORTA</p>
+      <picture class="navbar__blob">
+        <img src="img/blob.svg" alt="blob">
+      </picture>
+    </nav>
+    <main class="main">
+      <h1 class="main__title">Inserta tu DNI aquí</h1>
+      <p class="main__message">Al ingresar el DNI verás la información en cuanto al nombre y apellidos de la persona que buscas</p>
+      <div class="form__container">
+        <div class="input__container">
+          <input type="text" name="dni" id="dni" class="main__input">
+        </div>
+        <button class="btnBuscar">
+          <p>
+            Consultar DNI
+          </p>
+          <span class="iconify" data-icon="bx:id-card"></span>
+        </button>
+      </div>
+      <div class="card__bg">
+        <div class="card">
+          <picture>
+            <img src="img/person.svg" alt="person">
+          </picture>
+          <div class="card__info">
+            <p>Nombre:</p>
+            <span id="nombre"></span>
+            <p>Apellidos:</p>
+            <span id="apellidos"></span>
+            <p>DNI:</p>
+            <span id="dniID"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Consultor de DNI</p>
+      <p>©Luis Villacorta 2022</p>
+    </footer>
+  </section>
+  <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

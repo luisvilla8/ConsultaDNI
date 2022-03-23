@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  overflow: hidden;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #161616;
+  overflow: hidden;
+}
+
+.navbar {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.navbar__logo {
+  width: auto;
+}
+.navbar__logo img {
+  width: 60px;
+  height: 40px;
+  position: relative;
+  z-index: 1;
+}
+.navbar__name {
+  position: relative;
+  z-index: 1;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: .6rem;
+  width: fit-content;
+  color: #FDFDFD;
+  margin: 0 auto;
+  padding-top: .5rem;
+}
+.navbar__blob {
+  position: absolute;
+  right: -20%;
+  top: 10%;
+}
+
+@media screen and (min-width: 767px) {
+  .navbar {
+    flex-direction: row;
+  }
+  .navbar__name {
+    transform: translateX(-50%);
+    padding-bottom: 1rem;
+  }
+  .navbar__blob {
+    position: absolute;
+    right: 0;
+    top: 20%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .navbar {
+    padding: 4rem 8rem;
+  }
+  .navbar__name {
+    font-size: .8rem;
+    transform: translateX(-25%);
+  }
+}
+.main {
+  position: relative;
+  z-index: 1;
+}
+.main__title {
+  color: #FDFDFD;
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 0 3rem;
+  text-align: center;
+}
+.main__message {
+  color: #727272;
+  padding: 0.5rem 2rem 5rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: .8rem;
+}
+.input__container {
+  background: linear-gradient(85.79deg, #9D3B90 0%, #BE3467 28.65%, #E73040 51.04%, #F52D2C 76.04%, #FB7F47 100%);
+  border-radius: .3rem;
+  margin: 0 auto;
+  width: 15rem;
+  display: grid;
+  padding: .1rem;
+  place-items: center;
+}
+.main__input {
+  border: none;
+  background-color: #161616;
+  /* box-shadow: 0px 5px 200px 5px #F52D2C; */
+  border-radius: .3rem;
+  color: #FDFDFD;
+  padding: .25rem .5rem;
+  font-size: 1.2rem;
+  height: 3rem;
+  width: 100%;
+}
+.main__input:focus {
+  outline: none;
+}
+
+.btnBuscar {
+  border: none;
+  background: linear-gradient(85.79deg, #9D3B90 0%, #BE3467 28.65%, #E73040 51.04%, #F52D2C 76.04%, #FB7F47 100%);
+  background-size: 150%;
+  border-radius: .25rem; 
+  padding: 1rem 2rem;
+  display: block;
+  margin: 2rem auto;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: box-shadow .3s ease;
+  animation: GradientMove 4s alternate infinite;
+}
+.btnBuscar:hover {
+  box-shadow: 0px 5px 200px 5px #F52D2C;
+}
+.btnBuscar .iconify {
+  font-size: 1.2rem;
+}
+.form__container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+@media screen and (min-width: 767px) {
+  .main__title {
+    font-size: 2.5rem;
+  }
+  .main__message {
+    color: #727272;
+    padding: 0.5rem 10rem 5rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: .8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main__title {
+    font-size: 3.5rem;
+  }
+  .main__message {
+    color: #727272;
+    padding: 0.5rem 16rem 5rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+}
+.footer {
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: #727272;
+  font-size: .8rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    padding: 6rem 8rem 2rem;
+    font-size: .8rem;
+  }
+}
+@keyframes GradientMove {
+  0% {
+    background-position: center;
+  }
+  33% {
+    background-position: right;
+  }
+  66% {
+    background-position: center;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+.card__bg {
+  background: linear-gradient(85.79deg, #9D3B90 0%, #BE3467 28.65%, #E73040 51.04%, #F52D2C 76.04%, #FB7F47 100%);
+  width: 16rem;
+  position: absolute;
+  left: 5rem;
+  top: 55%;
+  border-radius: .5rem;
+  padding: .25rem;
+  opacity: 0;
+  z-index: -1;
+  transition: all 1s ease-in-out;
+}
+.card__bg.show {
+  opacity: 1;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card {
+  width: 100%;
+  background-color: #161616;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1rem .5rem;
+}
+.card__info {
+  color: #727272;
+  font-size: .7rem;
+}
+.card__info span {
+  color: #FDFDFD;
+  font-size: .7rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 1024px) {
+  .card__bg {
+    width: 20rem;
+  }
+}

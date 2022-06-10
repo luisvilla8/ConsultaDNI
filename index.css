@@ -74,6 +74,9 @@ body {
 .main {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .main__title {
   color: #FDFDFD;
@@ -84,10 +87,38 @@ body {
 }
 .main__message {
   color: #727272;
-  padding: 0.5rem 2rem 5rem;
+  padding: 0.5rem 2rem 3rem;
   text-align: center;
   font-weight: 500;
   font-size: .8rem;
+}
+.main__btnReset {
+  min-width: fit-content;
+  max-width: fit-content;
+  margin-bottom: 2rem;
+  padding: .5rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: #E73040;
+  border-radius: .3rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+.main__btnReset:hover {
+  background-color: #9D3B90;
+}
+.main__btnReset span,
+.main__btnReset .iconify {
+  pointer-events: none;
+}
+.main__btnReset .iconify {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+.main__btnReset.hidden {
+  display: none;
+  pointer-events: none;
 }
 .input__container {
   background: linear-gradient(85.79deg, #9D3B90 0%, #BE3467 28.65%, #E73040 51.04%, #F52D2C 76.04%, #FB7F47 100%);
@@ -101,13 +132,16 @@ body {
 .main__input {
   border: none;
   background-color: #161616;
-  /* box-shadow: 0px 5px 200px 5px #F52D2C; */
   border-radius: .3rem;
   color: #FDFDFD;
   padding: .25rem .5rem;
   font-size: 1.2rem;
   height: 3rem;
   width: 100%;
+  text-align: center;
+}
+.main__input::placeholder {
+  font-size: .8rem;
 }
 .main__input:focus {
   outline: none;
@@ -202,13 +236,14 @@ body {
   padding: .25rem;
   opacity: 0;
   z-index: -1;
-  transition: all 1s ease-in-out;
+  transition: all 0s;
 }
 .card__bg.show {
   opacity: 1;
   z-index: 1;
   left: 50%;
   transform: translateX(-50%);
+  transition: all 1s ease-in-out;
 }
 .card {
   width: 100%;

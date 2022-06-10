@@ -24,9 +24,13 @@
     <main class="main">
       <h1 class="main__title">Inserta tu DNI aquí</h1>
       <p class="main__message">Al ingresar el DNI verás la información en cuanto al nombre y apellidos de la persona que buscas</p>
+      <button class="main__btnReset hidden">
+        <span>Volver a consultar</span>
+        <span class="iconify" data-icon="eva:arrow-back-fill"></span>
+      </button>
       <div class="form__container">
         <div class="input__container">
-          <input type="text" name="dni" id="dni" class="main__input">
+          <input type="text" name="dni" id="dni" class="main__input" autocomplete="off" placeholder="Aquí debería estar tu DNI">
         </div>
         <button class="btnBuscar">
           <p>

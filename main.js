@@ -29,11 +29,13 @@ const fetchDNI = async (dni) => {
   const response = await fetch(`https://dniruc.apisperu.com/api/v1/dni/${dni}?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imx1aXM4ODhsZnZsQGdtYWlsLmNvbSJ9.HFWqJoI8-RrO0ldDMzV3gqezjTNRDSxL7-wubW22LPQ`);
   if (!response.ok) {
     const message = `An error has occured: ${response.status}`;
+    showWarning();
     throw new Error(message);
   }
   const data = await response.json();
   
   showData(data);
+  console.log(data)
 }
 
 const showData = ({ nombres, apellidoPaterno, apellidoMaterno, dni }) => {
@@ -43,4 +45,12 @@ const showData = ({ nombres, apellidoPaterno, apellidoMaterno, dni }) => {
   $card__bg.classList.add("show");
   $form__container.classList.add("hidden");
   $btnReset.classList.remove("hidden");
+}
+
+const showWarning = () => {
+  const $warning = document.querySelector(".warning");
+  $warning.classList.remove("hidden");
+  setTimeout(() => {
+    $warning.classList.add("hidden");
+  },3000)
 }
